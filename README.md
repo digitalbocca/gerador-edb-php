@@ -2,7 +2,7 @@
 
 **Gerador de Páginas Estáticas em PHP**
 
-#### v0.1.0 ####
+#### v0.2.0 ####
 
 #### INSTRUÇÕES ####
 
@@ -16,6 +16,14 @@
 - Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
 
 #### MUDANÇAS ####
+
+**mudanças v0.2.0**
+
+- Integrado o Novo Código com o Código Legado.
+- Criada a Classe EncontradorDeArquivos.
+- Adicionado autoload PSR-4 do composer.
+- Criada a Classe CriadorDeDiretorio.
+- Adicionado o Namespace EstudioDigitalBocca/Gerador.
 
 **mudanças v0.1.0**
 

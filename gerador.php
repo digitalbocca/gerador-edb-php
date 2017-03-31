@@ -1,24 +1,53 @@
 <?php
-    //$diretorio = opendir("./paginas");
 
-    mkdir('./gerados');
+/**
+ * Gerador de Páginas Estáticas EDB.
+ * 
+ * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
+ * @copyright (c) 2017, Estúdio Digital Bocca * @since v0.13.0 EDB Framework
+ * @version v0.2.0
+ */
 
-    $encontraArquivos = scandir("./paginas");
-    //var_dump($encontraArquivos);
+require_once('vendor/autoload.php');
 
-    array_shift($encontraArquivos);
-    //var_dump($encontraArquivos);
+new EstudioDigitalBocca\Gerador\CriadorDeDiretorio('gerados');
+
+/**
+ * @deprecated
+ */
+
+//$diretorio = opendir("./paginas");
+//mkdir('./gerados');
+
+$paginas = new EstudioDigitalBocca\Gerador\EncontradorDeArquivos('paginas');
+
+/**
+ * @deprecated
+ */
+
+//echo "Passei por aqui";
+//var_dump($paginas->retornaLista());
+
+//$encontraArquivos = scandir("./paginas");
+//var_dump($encontraArquivos);
+
+//array_shift($encontraArquivos);
+//var_dump($encontraArquivos);
     
-    array_shift($encontraArquivos);
-    //var_dump($encontraArquivos);
+//array_shift($encontraArquivos);
+//var_dump($encontraArquivos);
 
 
-    //$arquivo = file_get_contents("./paginas/index.json");
-    //$configuracao = json_decode($arquivo, true);
-    
-    //var_dump($configuracao);
-    //var_dump(scandir("./"));
-    //closedir($diretorio);
+//$arquivo = file_get_contents("./paginas/index.json");
+//$configuracao = json_decode($arquivo, true);
+
+//var_dump($configuracao);
+//var_dump(scandir("./"));
+//closedir($diretorio);
+
+//ADAPTADOR PARA O CÓDIGO LEGADO
+//PASSA A LISTA DE ARQUIVOS
+$encontraArquivos = $paginas->retornaLista();
 
     function montaPagina($configuracao){
         $doctype = "<!DOCTYPE html>";
