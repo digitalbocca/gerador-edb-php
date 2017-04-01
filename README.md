@@ -2,7 +2,7 @@
 
 **Gerador de Páginas Estáticas em PHP**
 
-#### v0.2.0 ####
+#### v0.3.0 ####
 
 #### INSTRUÇÕES ####
 
@@ -16,6 +16,14 @@
 - Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
 
 #### MUDANÇAS ####
+
+**mudanças v0.3.0**
+
+- Trabalhando no GeradorDeArquivo.
+- Criada a Interface ArquivoInterface.
+- Criada a Classe CriadorDeArquivo.
+- Criada a Entidade Arquivo.
+- Criada a Interface RetornoDeListaInterface.
 
 **mudanças v0.2.0**
 

@@ -8,12 +8,14 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca
  * @since v0.13.0 EDB Framework
- * @version v1.0
+ * @version v2.0
  */
 
 namespace EstudioDigitalBocca\Gerador;
 
-class EncontradorDeArquivos {
+use EstudioDigitalBocca\Gerador\Interfaces\RetornoDeListaInterface;
+
+class EncontradorDeArquivos implements RetornoDeListaInterface {
 
     /**
      * Lista de Arquivos do Diretório.
@@ -50,6 +52,7 @@ class EncontradorDeArquivos {
 
     /**
      * Retorna a Lista de Arquivos do Diretório.
+     * Metodo da Interface RetornoDeListaInterface.
      *
      * @return array $listaDeArquivos A Lista de arquivos do diretório.
      */

@@ -5,45 +5,13 @@
  * 
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca * @since v0.13.0 EDB Framework
- * @version v0.2.0
+ * @version v0.3.0
  */
 
 require_once('vendor/autoload.php');
 
-new EstudioDigitalBocca\Gerador\CriadorDeDiretorio('gerados');
-
-/**
- * @deprecated
- */
-
-//$diretorio = opendir("./paginas");
-//mkdir('./gerados');
-
+$pasta = new EstudioDigitalBocca\Gerador\CriadorDeDiretorio('gerados');
 $paginas = new EstudioDigitalBocca\Gerador\EncontradorDeArquivos('paginas');
-
-/**
- * @deprecated
- */
-
-//echo "Passei por aqui";
-//var_dump($paginas->retornaLista());
-
-//$encontraArquivos = scandir("./paginas");
-//var_dump($encontraArquivos);
-
-//array_shift($encontraArquivos);
-//var_dump($encontraArquivos);
-    
-//array_shift($encontraArquivos);
-//var_dump($encontraArquivos);
-
-
-//$arquivo = file_get_contents("./paginas/index.json");
-//$configuracao = json_decode($arquivo, true);
-
-//var_dump($configuracao);
-//var_dump(scandir("./"));
-//closedir($diretorio);
 
 //ADAPTADOR PARA O CÓDIGO LEGADO
 //PASSA A LISTA DE ARQUIVOS
@@ -80,8 +48,6 @@ $encontraArquivos = $paginas->retornaLista();
         return $dados;
     }
 
-    //file_put_contents("index.html", $dados, FILE_TEXT);
-
     foreach ($encontraArquivos as $arquivo) {
         $arquivoAtual = "./paginas/" . $arquivo;
         $abrir = file_get_contents($arquivoAtual);
@@ -92,8 +58,23 @@ $encontraArquivos = $paginas->retornaLista();
         $olhaAExplosao = explode('.',$arquivo);
         $nomeDoGerado = "./gerados/" . $olhaAExplosao[0] . ".html";
 
-        file_put_contents($nomeDoGerado, $montaPagina, FILE_TEXT);
+        //ADAPTADOR DE CODIGO LEGADO
+        //NA NOVA CLASSE DEVE RECEBER UMA INSTANCIA DA CLASSE
+        //DEVE IMPLEMENTAR UMA INTERFACE PARA MANIPULACAO DESSA CLASSE
+        $entidadeArquivo = new EstudioDigitalBocca\Gerador\Arquivo();
+        //var_dump($entidadeArquivo->retornaArquivo());
+        $entidadeArquivo->setNome($olhaAExplosao[0]);
+        $entidadeArquivo->setConteudo($montaPagina);
 
+        //Extraido para GeradorDeArquivo
+        
+        new EstudioDigitalBocca\Gerador\CriadorDeArquivo($entidadeArquivo);
+
+        /**
+         * @deprecated
+         */
+        
+        //file_put_contents($nomeDoGerado, $montaPagina, FILE_TEXT);
     }
 
 
