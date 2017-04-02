@@ -2,7 +2,7 @@
 
 **Gerador de Páginas Estáticas em PHP**
 
-#### v0.4.0 ####
+#### v0.5.0 ####
 
 #### INSTRUÇÕES ####
 
@@ -11,11 +11,17 @@
 - Clone o Respositório.
 - Adicione suas páginas (.json) na pasta paginas.
 - Edite o Arquivo de configuração projeto.json.
+- Adicione o Composer e crie o autoload PSR-4.
 - Rode o arquivo gerador.php.
 - Instale as Dependências (dentro da pasta gerados).
 - Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
 
 #### MUDANÇAS ####
+
+**mudanças v0.5.0**
+
+- Documentação das classes EstudioDigitalBocca/Gerador.
+- Mudanças na Geração de arquivo package do npm.
 
 **mudanças v0.4.0**
 

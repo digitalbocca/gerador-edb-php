@@ -17,25 +17,20 @@ use EstudioDigitalBocca\Gerador\Interfaces\ArquivoInterface;
 
 class CriadorDeArquivo {
 
-    public function __construct(ArquivoInterface $arquivo){
-        //isto tem que ser passado para outra classe
-     
+    /**
+     * Recebe uma Instancia que implementa ArquivoInterface
+     * e cria um arquivo com as informações da Entidade passada.
+     * 
+     * @see EstudioDigitalBocca\Gerador\Interfaces\ArquivoInterface
+     * @param ArquivoInterface $arquivo Instancia que implementa ArquivoInterface
+     * @return void
+     */
+    public function __construct(ArquivoInterface $arquivo){ 
         $arquivo = $arquivo->retornaArquivo();
-        
-        //var_dump($arquivo);
 
         $nomeCompleto = $arquivo['caminho'] .
                         $arquivo['nome'] .
                         $arquivo['extensao'];
-        /*
-        $caminho = $arquivo['caminho'];
-        $nome = $arquivo['nome'];
-        $extensao = $arquivo['extensao'];
-        
-        //var_dump($caminho);
-        $nomeCompleto  = $caminho . $nome . $extensao;
-        //var_dump($nomeCompleto);
-        */
 
         file_put_contents($nomeCompleto, $arquivo['conteudo'], FILE_TEXT);
     }

@@ -20,11 +20,21 @@ class ComposerStaticInitf787d56fb0b9dabc53a0cfe25e775bbc
         ),
     );
 
+    public static $classMap = array (
+        'EstudioDigitalBocca\\Gerador\\Arquivo' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Arquivo.php',
+        'EstudioDigitalBocca\\Gerador\\CriadorDeArquivo' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/CriadorDeArquivo.php',
+        'EstudioDigitalBocca\\Gerador\\CriadorDeDiretorio' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/CriadorDeDiretorio.php',
+        'EstudioDigitalBocca\\Gerador\\EncontradorDeArquivos' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/EncontradorDeArquivos.php',
+        'EstudioDigitalBocca\\Gerador\\Interfaces\\ArquivoInterface' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Interfaces/ArquivoInterface.php',
+        'EstudioDigitalBocca\\Gerador\\Interfaces\\RetornoDeListaInterface' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Interfaces/RetornoDeListaInterface.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitf787d56fb0b9dabc53a0cfe25e775bbc::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf787d56fb0b9dabc53a0cfe25e775bbc::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf787d56fb0b9dabc53a0cfe25e775bbc::$classMap;
 
         }, null, ClassLoader::class);
     }
