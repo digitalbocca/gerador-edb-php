@@ -21,12 +21,15 @@ class ComposerStaticInitf787d56fb0b9dabc53a0cfe25e775bbc
     );
 
     public static $classMap = array (
+        'EstudioDigitalBocca\\Gerador\\AbridorDeArquivo' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/AbridorDeArquivo.php',
         'EstudioDigitalBocca\\Gerador\\Arquivo' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Arquivo.php',
         'EstudioDigitalBocca\\Gerador\\CriadorDeArquivo' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/CriadorDeArquivo.php',
         'EstudioDigitalBocca\\Gerador\\CriadorDeDiretorio' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/CriadorDeDiretorio.php',
         'EstudioDigitalBocca\\Gerador\\EncontradorDeArquivos' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/EncontradorDeArquivos.php',
         'EstudioDigitalBocca\\Gerador\\Interfaces\\ArquivoInterface' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Interfaces/ArquivoInterface.php',
+        'EstudioDigitalBocca\\Gerador\\Interfaces\\RetornoDeConfiguracaoInterface' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Interfaces/RetornoDeConfiguracaoInterface.php',
         'EstudioDigitalBocca\\Gerador\\Interfaces\\RetornoDeListaInterface' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/Interfaces/RetornoDeListaInterface.php',
+        'EstudioDigitalBocca\\Gerador\\LeitorDeModelo' => __DIR__ . '/../..' . '/EstudioDigitalBocca/Gerador/LeitorDeModelo.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

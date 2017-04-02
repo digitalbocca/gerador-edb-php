@@ -6,7 +6,7 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca 
  * @since v0.1.0 Gerador EDB
- * @version v0.5.0
+ * @version v0.6.0
  */
 
 require_once('vendor/autoload.php');
@@ -18,28 +18,47 @@ $paginas = new EstudioDigitalBocca\Gerador\EncontradorDeArquivos('paginas');
 //PASSA A LISTA DE ARQUIVOS
 $encontraArquivos = $paginas->retornaLista();
 
+
+/**
+ * @deprecated
+ */
+
+/*
 function montaPagina($configuracao, $tipo){
     require "modelos/" . $tipo . ".php";
     return $modelo;
 }
+*/
+
+//TESTE DO LEITOR DE ARQUIVOS MULTIPLOS (FORA DO FOREACH)
+$leitor = new EstudioDigitalBocca\Gerador\AbridorDeArquivo();
 
 foreach ($encontraArquivos as $arquivo) {
     $arquivoAtual = "./paginas/" . $arquivo;
-    $abrir = file_get_contents($arquivoAtual);
-    $configuracao = json_decode($abrir, true);
 
-    $montaPagina = montapagina($configuracao, 'pagina');
+    $leitor->trocaArquivo($arquivoAtual);
+
+
+    //$configuracao = $leitor->retornaConfiguracao();
+    /**
+     * @deprecated
+     */
+    //$abrir = file_get_contents($arquivoAtual);
+    //$configuracao = json_decode($abrir, true);
+
+    //Futuramente pegar o type diretamente na configuração do arquivo.json
+    $lerModelo = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitor, 'pagina');
+    /**
+     * @deprecated
+     */
+    //$montaPagina = montapagina($configuracao, 'pagina');
 
     $olhaAExplosao = explode('.',$arquivo);
     $nomeDoGerado = "./gerados/" . $olhaAExplosao[0] . ".html";
 
-    //ADAPTADOR DE CODIGO LEGADO
-    //NA NOVA CLASSE DEVE RECEBER UMA INSTANCIA DA CLASSE
-    //DEVE IMPLEMENTAR UMA INTERFACE PARA MANIPULACAO DESSA CLASSE
     $entidadeArquivo = new EstudioDigitalBocca\Gerador\Arquivo();
-    //var_dump($entidadeArquivo->retornaArquivo());
     $entidadeArquivo->setNome($olhaAExplosao[0]);
-    $entidadeArquivo->setConteudo($montaPagina);
+    $entidadeArquivo->setConteudo($lerModelo->retornaModelo());
     
     new EstudioDigitalBocca\Gerador\CriadorDeArquivo($entidadeArquivo);
 }
@@ -48,24 +67,35 @@ foreach ($encontraArquivos as $arquivo) {
  * Gerando o NPM
  * 
  */
-$arquivoNPM = file_get_contents("./projeto.json");
-$configuracaoNPM = json_decode($arquivoNPM, true);
+
+$leitorNPM = new EstudioDigitalBocca\Gerador\AbridorDeArquivo("./projeto.json");
+
+/**
+ * @deprecated
+ */
+//$configuracaoNPM = $leitorNPM->retornaConfiguracao();
+
+/**
+ * @deprecated
+ */
+//$arquivoNPM = file_get_contents("./projeto.json");
+//$configuracaoNPM = json_decode($arquivoNPM, true);
 
 $arquivoNPM = new EstudioDigitalBocca\Gerador\Arquivo(".json");
 $arquivoNPM->setNome("package");
 
-//ADAPTADOR NA FUNCAO QUE GERA O ARQUIVO
-$gerarNPM = montaPagina($configuracaoNPM, 'package');
-
-$arquivoNPM->setConteudo($gerarNPM);
-
-new EstudioDigitalBocca\Gerador\CriadorDeArquivo($arquivoNPM);
+$lerModeloNPM = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitorNPM, 'package');
 
 /**
  * @deprecated
  */
 
-//file_put_contents("./gerados/package.json", $gerarNPM, FILE_TEXT);
+//ADAPTADOR NA FUNCAO QUE GERA O ARQUIVO
+//$gerarNPM = montaPagina($configuracaoNPM, 'package');
+
+$arquivoNPM->setConteudo($lerModeloNPM->retornaModelo());
+
+new EstudioDigitalBocca\Gerador\CriadorDeArquivo($arquivoNPM);
 
 /**
  * Criando Git Ignore

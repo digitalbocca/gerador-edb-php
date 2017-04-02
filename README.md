@@ -2,7 +2,7 @@
 
 **Gerador de Páginas Estáticas em PHP**
 
-#### v0.5.0 ####
+#### v0.6.0 ####
 
 #### INSTRUÇÕES ####
 
@@ -17,6 +17,10 @@
 - Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
 
 #### MUDANÇAS ####
+
+**mudanças v0.6.0**
+
+- Criado um leitor de Modelos.
 
 **mudanças v0.5.0**
 
