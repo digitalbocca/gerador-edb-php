@@ -1,5 +1,6 @@
 {
     "title": "Gerador do Gabriel - Nossa Empresa",
-    "text": "Página descritiva da empresa. Gerado no Gerador do Gabriel.",
-    "link": "empresa"
+    "text" : "Página descritiva da empresa. Gerado no Gerador do Gabriel.",
+    "link" : "empresa",
+    "type" : "pagina"
 }

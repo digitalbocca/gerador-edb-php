@@ -1,5 +1,6 @@
 {
     "title": "Gerador do Gabriel - Contato",
-    "text": "Página de Contato Gerada Automáticamente.",
-    "link": "contato"
+    "text" : "Página de Contato Gerada Automáticamente.",
+    "link" : "contato",
+    "type" : "pagina"
 }

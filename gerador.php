@@ -4,7 +4,8 @@
  * Gerador de Páginas Estáticas EDB.
  * 
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
- * @copyright (c) 2017, Estúdio Digital Bocca * @since v0.13.0 EDB Framework
+ * @copyright (c) 2017, Estúdio Digital Bocca 
+ * @since v0.13.0 EDB Framework
  * @version v0.3.0
  */
 
@@ -17,7 +18,12 @@ $paginas = new EstudioDigitalBocca\Gerador\EncontradorDeArquivos('paginas');
 //PASSA A LISTA DE ARQUIVOS
 $encontraArquivos = $paginas->retornaLista();
 
-    function montaPagina($configuracao){
+    function montaPagina($configuracao, $tipo){
+        /**
+         * @deprecated
+         */
+        
+        /*
         $doctype = "<!DOCTYPE html>";
         $lang = "<html lang='pt-br'>";
 
@@ -46,6 +52,10 @@ $encontraArquivos = $paginas->retornaLista();
                 . $fechaBody
                 . $fechaHTML;
         return $dados;
+        */
+
+        require "modelos/" . $tipo . ".php";
+        return $modelo;
     }
 
     foreach ($encontraArquivos as $arquivo) {
@@ -53,7 +63,7 @@ $encontraArquivos = $paginas->retornaLista();
         $abrir = file_get_contents($arquivoAtual);
         $configuracao = json_decode($abrir, true);
 
-        $montaPagina = montapagina($configuracao);
+        $montaPagina = montapagina($configuracao, 'pagina');
 
         $olhaAExplosao = explode('.',$arquivo);
         $nomeDoGerado = "./gerados/" . $olhaAExplosao[0] . ".html";
@@ -65,16 +75,9 @@ $encontraArquivos = $paginas->retornaLista();
         //var_dump($entidadeArquivo->retornaArquivo());
         $entidadeArquivo->setNome($olhaAExplosao[0]);
         $entidadeArquivo->setConteudo($montaPagina);
-
-        //Extraido para GeradorDeArquivo
         
         new EstudioDigitalBocca\Gerador\CriadorDeArquivo($entidadeArquivo);
 
-        /**
-         * @deprecated
-         */
-        
-        //file_put_contents($nomeDoGerado, $montaPagina, FILE_TEXT);
     }
 
 
@@ -85,6 +88,11 @@ $encontraArquivos = $paginas->retornaLista();
     $arquivoNPM = file_get_contents("./projeto.json");
     $configuracaoNPM = json_decode($arquivoNPM, true);
     
+    /**
+     * @deprecated
+     */
+    
+    /*
     $npm = '{'
          . '"name": "' . $configuracaoNPM['Nome'] . '",'
          . '"version": "1.24.0",'
@@ -108,10 +116,26 @@ $encontraArquivos = $paginas->retornaLista();
             }
         }';
 
-    file_put_contents("./gerados/package.json", $npm, FILE_TEXT);
+    */
+
+    //ADAPTADOR NA FUNCAO QUE GERA O ARQUIVO
+    $gerarNPM = montaPagina($configuracaoNPM, 'package');
+    file_put_contents("./gerados/package.json", $gerarNPM, FILE_TEXT);
+
+    /**
+     * @deprecated
+     */
+    //file_put_contents("./gerados/package.json", $npm, FILE_TEXT);
 
     /**
      * Criando Git Ignore
      */
     $gitIgnore = "/node_modules";
     file_put_contents("./gerados/.gitignore", $gitIgnore, FILE_TEXT);
+
+    print("\n");
+    print("SEU SITE FOI CRIADO NA PASTA gerados\n");
+    print("\n");
+    print("cd gerados\n");
+    print("npm install\n");
+    print("npm run build\n");

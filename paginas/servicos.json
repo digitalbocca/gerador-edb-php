@@ -1,5 +1,6 @@
 {
     "title": "Gerador do Gabriel - Serviços",
-    "text": "Prestamos serviços de geração automatizado.",
-    "link": "serviços"
+    "text" : "Prestamos serviços de geração automatizado.",
+    "link" : "serviços",
+    "type" : "pagina"
 }

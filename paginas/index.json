@@ -1,5 +1,6 @@
 {
     "title": "Gerador do Gabriel",
-    "text": "Este é um Gerador Mano.",
-    "link": "home"
+    "text" : "Este é um Gerador Mano.",
+    "link" : "home",
+    "type" : "pagina"
 }

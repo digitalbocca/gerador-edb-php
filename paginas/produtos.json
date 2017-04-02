@@ -1,5 +1,6 @@
 {
     "title": "Gerador do Gabriel - Produtos",
-    "text": "Temos vários modelos de geradores PHP.",
-    "link": "produtos"
+    "text" : "Temos vários modelos de geradores PHP.",
+    "link" : "produtos",
+    "type" : "pagina"
 }

@@ -2,7 +2,7 @@
 
 **Gerador de Páginas Estáticas em PHP**
 
-#### v0.3.0 ####
+#### v0.4.0 ####
 
 #### INSTRUÇÕES ####
 
@@ -16,6 +16,14 @@
 - Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
 
 #### MUDANÇAS ####
+
+**mudanças v0.4.0**
+
+- Páginas Geradas agora são editaveis e possuem identação.
+- Gerando package no modelo novo.
+- Adicionado modelo de package npm.
+- Adicionado Type nas Páginas json.
+- Adicionado modelos de html.
 
 **mudanças v0.3.0**
 
