@@ -1,0 +1,19 @@
+{
+  "name": "gerador-edb",
+  "version": "0.7.0",
+  "description": "Gerador de Páginas HTML Estáticas em PHP",
+  "main": "gerador.php",
+  "scripts": {
+    "gerar": "php gerador.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://digitalbocca@bitbucket.org/digitalbocca/gerador-edb.git"
+  },
+  "keywords": [
+    "gerador"
+  ],
+  "author": "Gabriel Bertola Bocca - gabriel@estudiodigitalbocca.com.br",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/digitalbocca/gerador-edb#readme"
+}

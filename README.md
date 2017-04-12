@@ -2,7 +2,7 @@
 
 **Gerador de Páginas Estáticas em PHP**
 
-#### v0.6.0 ####
+#### v0.7.0 ####
 
 #### INSTRUÇÕES ####
 
@@ -17,6 +17,12 @@
 - Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
 
 #### MUDANÇAS ####
+
+**mudanças v0.7.0**
+
+- Adicionado comando npm run gerar.
+- Adicionado package.json.
+- Verifica e Sobrescreve pasta existente (Precisa de Modificação).
 
 **mudanças v0.6.0**
 

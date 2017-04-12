@@ -6,10 +6,18 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca 
  * @since v0.1.0 Gerador EDB
- * @version v0.6.0
+ * @version v0.7.0
  */
 
 require_once('vendor/autoload.php');
+
+/**
+ * @todo Iniciar um Leitor De Diretorio e um Apagador de Diretorio
+ */
+
+/**
+ * @todo Renomear projeto.json para config.json e trazer dele as configs de diretórios.
+ */
 
 $pasta = new EstudioDigitalBocca\Gerador\CriadorDeDiretorio('gerados');
 $paginas = new EstudioDigitalBocca\Gerador\EncontradorDeArquivos('paginas');
@@ -17,18 +25,6 @@ $paginas = new EstudioDigitalBocca\Gerador\EncontradorDeArquivos('paginas');
 //ADAPTADOR PARA O CÓDIGO LEGADO
 //PASSA A LISTA DE ARQUIVOS
 $encontraArquivos = $paginas->retornaLista();
-
-
-/**
- * @deprecated
- */
-
-/*
-function montaPagina($configuracao, $tipo){
-    require "modelos/" . $tipo . ".php";
-    return $modelo;
-}
-*/
 
 //TESTE DO LEITOR DE ARQUIVOS MULTIPLOS (FORA DO FOREACH)
 $leitor = new EstudioDigitalBocca\Gerador\AbridorDeArquivo();
@@ -38,20 +34,8 @@ foreach ($encontraArquivos as $arquivo) {
 
     $leitor->trocaArquivo($arquivoAtual);
 
-
-    //$configuracao = $leitor->retornaConfiguracao();
-    /**
-     * @deprecated
-     */
-    //$abrir = file_get_contents($arquivoAtual);
-    //$configuracao = json_decode($abrir, true);
-
     //Futuramente pegar o type diretamente na configuração do arquivo.json
     $lerModelo = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitor, 'pagina');
-    /**
-     * @deprecated
-     */
-    //$montaPagina = montapagina($configuracao, 'pagina');
 
     $olhaAExplosao = explode('.',$arquivo);
     $nomeDoGerado = "./gerados/" . $olhaAExplosao[0] . ".html";
@@ -65,33 +49,14 @@ foreach ($encontraArquivos as $arquivo) {
 
 /**
  * Gerando o NPM
- * 
  */
 
 $leitorNPM = new EstudioDigitalBocca\Gerador\AbridorDeArquivo("./projeto.json");
-
-/**
- * @deprecated
- */
-//$configuracaoNPM = $leitorNPM->retornaConfiguracao();
-
-/**
- * @deprecated
- */
-//$arquivoNPM = file_get_contents("./projeto.json");
-//$configuracaoNPM = json_decode($arquivoNPM, true);
 
 $arquivoNPM = new EstudioDigitalBocca\Gerador\Arquivo(".json");
 $arquivoNPM->setNome("package");
 
 $lerModeloNPM = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitorNPM, 'package');
-
-/**
- * @deprecated
- */
-
-//ADAPTADOR NA FUNCAO QUE GERA O ARQUIVO
-//$gerarNPM = montaPagina($configuracaoNPM, 'package');
 
 $arquivoNPM->setConteudo($lerModeloNPM->retornaModelo());
 

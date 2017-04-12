@@ -26,6 +26,31 @@ class CriadorDeDiretorio {
      */
     public function __construct($nome, $caminho = "./"){
         $diretorio = $caminho . $nome;
+
+        if(file_exists($diretorio)){
+            /**
+             * CUIDADO !!!
+             * Implementação GoHorse.
+             * 
+             * @todo Receber um Objeto Encontrador de Arquivos
+             */
+            
+            $listaDeArquivos = new EncontradorDeArquivos($nome);
+
+            foreach ($listaDeArquivos->retornaLista() as $arquivo){
+                $arquivoAtual = $diretorio . "/" . $arquivo;
+                print("APAGANDO ARQUIVO: " . $arquivoAtual . "\n");
+                unlink($arquivoAtual);
+            }
+
+            /**
+             * Final da Implementação GoHorse.
+             */
+
+            rmdir($diretorio);
+            print("Apagando Pasta Antiga\n");
+        }
+
         mkdir($diretorio);
     }
 }
