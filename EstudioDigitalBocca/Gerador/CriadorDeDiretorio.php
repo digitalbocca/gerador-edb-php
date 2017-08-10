@@ -15,6 +15,26 @@ namespace EstudioDigitalBocca\Gerador;
 
 class CriadorDeDiretorio {
 
+    private function ExcluiDir($Dir){
+    
+        if ($dd = opendir($Dir)) {
+            while (false !== ($Arq = readdir($dd))) {
+                if($Arq != "." && $Arq != ".."){
+                    $Path = "$Dir/$Arq";
+                    if(is_dir($Path)){
+                        $this->ExcluiDir($Path);
+                    }elseif(is_file($Path)){
+                        print("APAGANDO ARQUIVO: " . $Path . "\n");
+                        unlink($Path);
+
+                    }
+                }
+            }
+            closedir($dd);
+        }
+        rmdir($Dir);
+    }
+
     /**
      * Recebe um nome e um caminho (opcional) para a criação de um diretório.
      * Caso não receba um caminho o valor padrão é o diretório atual.
@@ -26,8 +46,11 @@ class CriadorDeDiretorio {
      */
     public function __construct($nome, $caminho = "./"){
         $diretorio = $caminho . $nome;
-
+        
         if(file_exists($diretorio)){
+
+            $this->ExcluiDir($diretorio);
+
             /**
              * CUIDADO !!!
              * Implementação GoHorse.
@@ -35,19 +58,19 @@ class CriadorDeDiretorio {
              * @todo Receber um Objeto Encontrador de Arquivos
              */
             
-            $listaDeArquivos = new EncontradorDeArquivos($nome);
+            // $listaDeArquivos = new EncontradorDeArquivos($nome);
 
-            foreach ($listaDeArquivos->retornaLista() as $arquivo){
-                $arquivoAtual = $diretorio . "/" . $arquivo;
-                print("APAGANDO ARQUIVO: " . $arquivoAtual . "\n");
-                unlink($arquivoAtual);
-            }
+            // foreach ($listaDeArquivos->retornaLista() as $arquivo){
+            //     $arquivoAtual = $diretorio . "/" . $arquivo;
+            //     print("APAGANDO ARQUIVO: " . $arquivoAtual . "\n");
+            //     unlink($arquivoAtual);
+            // }
 
             /**
              * Final da Implementação GoHorse.
              */
 
-            rmdir($diretorio);
+            // rmdir($diretorio);
             print("Apagando Pasta Antiga\n");
         }
 

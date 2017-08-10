@@ -1,22 +1,55 @@
-# Gerador EDB #
+# Estúdio Digital Bocca
+## Gerador EDB ##
+### v0.8.0 ###
 
-**Gerador de Páginas Estáticas em PHP**
+> Gerador de Páginas Estáticas em PHP
 
-#### v0.7.0 ####
+### ETIQUETAS ###
 
-#### INSTRUÇÕES ####
+[![edb](https://img.shields.io/badge/produto-EDB-e67e22.svg)](https://estudiodigitalbocca.com.br)
+[![php](https://img.shields.io/badge/escrito_em-PHP-9b59b6.svg)](https://estudiodigitalbocca.com.br)
+[![js](https://img.shields.io/badge/escrito_em-JS-f1c40f.svg)](https://estudiodigitalbocca.com.br)
+[![egh-php](https://img.shields.io/badge/Extreme_Go_Horse-PHP-9b59b6.svg)](https://estudiodigitalbocca.com.br)
+[![versao](https://img.shields.io/badge/versao-v0.8.0-7f8c8d.svg)](https://estudiodigitalbocca.com.br)
 
-**INSTALAÇÃO**
+### INSTRUÇÕES ###
+
+**INSTALAÇÃO - RAIZ**
 
 - Clone o Respositório.
 - Adicione suas páginas (.json) na pasta paginas.
 - Edite o Arquivo de configuração projeto.json.
 - Adicione o Composer e crie o autoload PSR-4.
 - Rode o arquivo gerador.php.
-- Instale as Dependências (dentro da pasta gerados).
-- Gere os arquivos de produção com o Gulp (dentro da pasta gerados).
+
+**INSTALAÇÃO - PASTA GERADOS**
+
+- Instale as Dependências:
+```bash
+npm install
+```
+
+- Instale Globalmente o http-server:
+```bash
+npm run pos
+```
+
+- Rode o Servidor de Desenvolvimento:
+```bash
+npm run dev
+```
+
+- Gere os arquivos de produção com o Gulp (AGUARDANDO IMPLEMENTAÇÃO).
 
 #### MUDANÇAS ####
+
+**mudanças v0.8.0**
+
+- Correção no README.
+- Adicionado server de desenvolvimento: npm run dev.
+- Adicionado comando de pós instalação: npm run pos.
+- Atualização de dependências.
+- Corrigido BUG que não deletava a pasta gerados.
 
 **mudanças v0.7.0**
 
@@ -61,3 +94,8 @@
 
 - Recebido Código Legado (Vindo de Teste).
 - Início do Controle de Versão.
+
+---
+
+>Produzido nos Estúdios da **EDB/Sao Paulo** utilizando o melhor da programacao web.
+>(c)2017 - Estudio Digital Bocca - http://estudiodigitalbocca.com.br

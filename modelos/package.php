@@ -17,13 +17,15 @@ $modelo = <<<MODELO
   "version": "0.4.0",
   "description": "{$configuracao['Descricao']}",
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "dev": "http-server -o",
+    "pos": "npm install -g http-server"
   },
   "author": "{$configuracao['Autor']}",
   "devDependencies": {
-    "@aquafadas/gulp-php-minify": "^0.3.1",
+    "@cedx/gulp-php-minify": "^5.0.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.4",
+    "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
     "gulp-html-minifier2": "^1.1.8",
     "gulp-jsonminify2": "^1.0.2",
