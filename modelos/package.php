@@ -8,13 +8,13 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca
  * @since v0.4.0 Gerador EDB
- * @version v1.0
+ * @version v1.1.0
  */
 
 $modelo = <<<MODELO
 {
   "name": "{$configuracao['Nome']}",
-  "version": "0.4.0",
+  "version": "0.8.0",
   "description": "{$configuracao['Descricao']}",
   "scripts": {
     "build": "gulp build",

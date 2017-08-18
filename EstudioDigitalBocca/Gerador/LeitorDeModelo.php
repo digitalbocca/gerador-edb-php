@@ -19,8 +19,9 @@ class LeitorDeModelo {
 
     private $modelo;
 
-    public function __construct(RCI $conf, $tipo){
+    public function __construct(RCI $conf, $tipo, $menu){
         $configuracao = $conf->retornaConfiguracao();
+        $configuracao['menu'] = $menu;
         require "modelos/" . $tipo . ".php";
         $this->modelo = $modelo;
     }

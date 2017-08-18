@@ -29,13 +29,34 @@ $encontraArquivos = $paginas->retornaLista();
 //TESTE DO LEITOR DE ARQUIVOS MULTIPLOS (FORA DO FOREACH)
 $leitor = new EstudioDigitalBocca\Gerador\AbridorDeArquivo();
 
+// CRIAÇÃO DO MENU
+foreach ($encontraArquivos as $arquivo) {
+    $arquivoAtual = "./paginas/" . $arquivo;
+
+    // $lerModelo = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitor, 'menu');
+
+    $olhaAExplosao = explode('.',$arquivo);
+    $link = "<a href='" . $olhaAExplosao[0] . ".html'>" . $olhaAExplosao[0] . "</a>";
+
+    file_put_contents("./gerados/menu.php", $link, FILE_APPEND);
+    // $entidadeArquivo = new EstudioDigitalBocca\Gerador\Arquivo();
+    // $entidadeArquivo->setNome($olhaAExplosao[0]);
+    // $entidadeArquivo->setConteudo($lerModelo->retornaModelo());
+    
+    // new EstudioDigitalBocca\Gerador\CriadorDeArquivo($entidadeArquivo);
+}
+
+
+
 foreach ($encontraArquivos as $arquivo) {
     $arquivoAtual = "./paginas/" . $arquivo;
 
     $leitor->trocaArquivo($arquivoAtual);
-
+    
+    $conf = file_get_contents('./gerados/menu.php');
+    
     //Futuramente pegar o type diretamente na configuração do arquivo.json
-    $lerModelo = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitor, 'pagina');
+    $lerModelo = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitor, 'pagina', $conf);
 
     $olhaAExplosao = explode('.',$arquivo);
     $nomeDoGerado = "./gerados/" . $olhaAExplosao[0] . ".html";
@@ -56,7 +77,7 @@ $leitorNPM = new EstudioDigitalBocca\Gerador\AbridorDeArquivo("./projeto.json");
 $arquivoNPM = new EstudioDigitalBocca\Gerador\Arquivo(".json");
 $arquivoNPM->setNome("package");
 
-$lerModeloNPM = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitorNPM, 'package');
+$lerModeloNPM = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitorNPM, 'package', 'vazio');
 
 $arquivoNPM->setConteudo($lerModeloNPM->retornaModelo());
 
