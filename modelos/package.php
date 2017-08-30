@@ -8,20 +8,28 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca
  * @since v0.4.0 Gerador EDB
- * @version v1.1.0
+ * @version v1.2.0
  */
 
 $modelo = <<<MODELO
 {
   "name": "{$configuracao['Nome']}",
-  "version": "0.8.0",
+  "version": "0.10.0",
   "description": "{$configuracao['Descricao']}",
+  "author": "{$configuracao['Autor']}",
+  "config": {
+    "commitMessage": "Automatização do Controle de Versão"
+  },
   "scripts": {
     "build": "gulp build",
     "dev": "http-server -o",
-    "pos": "npm install -g http-server"
+    "postinstall": "npm install -g http-server",    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gitpushorigin && npm run gitpushbitbucket",
+    "gitstatus": "git status",
+    "gitadd": "git add .",
+    "gitcommit": "git commit -m \"%npm_package_config_commitMessage%\"",
+    "gittag": "git tag v%npm_package_version%",
+    "gitpushorigin" : "git push origin master --tags"
   },
-  "author": "{$configuracao['Autor']}",
   "devDependencies": {
     "@cedx/gulp-php-minify": "^5.0.0",
     "gulp": "^3.9.1",

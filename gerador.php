@@ -6,14 +6,10 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca 
  * @since v0.1.0 Gerador EDB
- * @version v0.7.0
+ * @version v0.8.0
  */
 
 require_once('vendor/autoload.php');
-
-/**
- * @todo Iniciar um Leitor De Diretorio e um Apagador de Diretorio
- */
 
 /**
  * @todo Renomear projeto.json para config.json e trazer dele as configs de diretórios.
@@ -32,18 +28,9 @@ $leitor = new EstudioDigitalBocca\Gerador\AbridorDeArquivo();
 // CRIAÇÃO DO MENU
 foreach ($encontraArquivos as $arquivo) {
     $arquivoAtual = "./paginas/" . $arquivo;
-
-    // $lerModelo = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitor, 'menu');
-
     $olhaAExplosao = explode('.',$arquivo);
     $link = "<a href='" . $olhaAExplosao[0] . ".html'>" . $olhaAExplosao[0] . "</a>";
-
     file_put_contents("./gerados/menu.php", $link, FILE_APPEND);
-    // $entidadeArquivo = new EstudioDigitalBocca\Gerador\Arquivo();
-    // $entidadeArquivo->setNome($olhaAExplosao[0]);
-    // $entidadeArquivo->setConteudo($lerModelo->retornaModelo());
-    
-    // new EstudioDigitalBocca\Gerador\CriadorDeArquivo($entidadeArquivo);
 }
 
 
@@ -82,6 +69,18 @@ $lerModeloNPM = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitorNPM, 'pack
 $arquivoNPM->setConteudo($lerModeloNPM->retornaModelo());
 
 new EstudioDigitalBocca\Gerador\CriadorDeArquivo($arquivoNPM);
+
+/**
+ * Gerando o README
+ */
+
+// $leitorREADME = new EstudioDigitalBocca\Gerador\AbridorDeArquivo("");
+$arquivoREADME = new EstudioDigitalBocca\Gerador\Arquivo(".md");
+$arquivoREADME-> setNome("README");
+$lerModeloREADME = new EstudioDigitalBocca\Gerador\LeitorDeModelo($leitorNPM, 'README', 'vazio');
+$arquivoREADME->setConteudo($lerModeloREADME->retornaModelo());
+
+new EstudioDigitalBocca\Gerador\CriadorDeArquivo($arquivoREADME);
 
 /**
  * Criando Git Ignore
