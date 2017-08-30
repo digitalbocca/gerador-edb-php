@@ -1,14 +1,14 @@
 {
   "name": "gerador-edb",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Gerador de Páginas HTML Estáticas em PHP",
   "main": "gerador.php",
   "config": {
-    "commitMessage": "Adicionado Gerador de README"
+    "commitMessage": "Correção no script npm git"
   },
   "scripts": {
     "gerar": "php gerador.php",
-    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gitpushorigin && npm run gitpushbitbucket",
+    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gitpushorigin",
     "gitstatus": "git status",
     "gitadd": "git add .",
     "gitcommit": "git commit -m \"%npm_package_config_commitMessage%\"",

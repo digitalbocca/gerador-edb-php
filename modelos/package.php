@@ -23,7 +23,8 @@ $modelo = <<<MODELO
   "scripts": {
     "build": "gulp build",
     "dev": "http-server -o",
-    "postinstall": "npm install -g http-server",    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gitpushorigin && npm run gitpushbitbucket",
+    "postinstall": "npm install -g http-server",
+    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gitpushorigin",
     "gitstatus": "git status",
     "gitadd": "git add .",
     "gitcommit": "git commit -m \"%npm_package_config_commitMessage%\"",
