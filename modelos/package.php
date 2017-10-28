@@ -32,7 +32,7 @@ $modelo = <<<MODELO
     "gitpushorigin" : "git push origin master --tags"
   },
   "devDependencies": {
-    "@cedx/gulp-php-minify": "^5.0.0",
+    "@cedx/gulp-php-minify": "^7.0.1",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
@@ -40,7 +40,7 @@ $modelo = <<<MODELO
     "gulp-jsonminify2": "^1.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-tinify": "^1.0.2",
-    "gulp-uglify": "^2.1.2",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11"
   }
