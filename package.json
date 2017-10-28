@@ -8,21 +8,22 @@
   },
   "scripts": {
     "gerar": "php gerador.php",
-    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gitpushorigin",
+    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gporigin && npm run gpbb",
     "gitstatus": "git status",
     "gitadd": "git add .",
     "gitcommit": "git commit -m \"%npm_package_config_commitMessage%\"",
     "gittag": "git tag v%npm_package_version%",
-    "gitpushorigin" : "git push origin master --tags"
+    "gporigin" : "git push origin master --tags",
+    "gpbb" : "git push bitbucket master --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://digitalbocca@bitbucket.org/digitalbocca/gerador-edb.git"
+    "url": "git+https://github.com/digitalbocca/gerador-edb-php.git"
   },
   "keywords": [
     "gerador"
   ],
   "author": "Gabriel Bertola Bocca - gabriel@estudiodigitalbocca.com.br",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/digitalbocca/gerador-edb#readme"
+  "license": "MIT",
+  "homepage": "https://github.com/digitalbocca/gerador-edb-php.git"
 }

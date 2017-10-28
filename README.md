@@ -1,8 +1,11 @@
 # Estúdio Digital Bocca
 ## Gerador EDB ##
-### v0.11.0 ###
+### v1.0.0 ###
 
 > Gerador de Páginas Estáticas em PHP
+
+# ATENÇÃO: NÃO USE EM PRODUÇÃO, APENAS PARA ESTUDO. #
+# ESTOU ATUALIZANDO O README COM O PASSO A PASSO CORRETO DA INSTALAÇÃO. OBRIGADO PELA COMPREENSÃO #
 
 ### ETIQUETAS ###
 
@@ -10,7 +13,7 @@
 [![php](https://img.shields.io/badge/escrito_em-PHP-9b59b6.svg)](https://estudiodigitalbocca.com.br)
 [![js](https://img.shields.io/badge/escrito_em-JS-f1c40f.svg)](https://estudiodigitalbocca.com.br)
 [![egh-php](https://img.shields.io/badge/Extreme_Go_Horse-PHP-9b59b6.svg)](https://estudiodigitalbocca.com.br)
-[![versao](https://img.shields.io/badge/versao-v0.11.0-7f8c8d.svg)](https://estudiodigitalbocca.com.br)
+[![versao](https://img.shields.io/badge/versao-v1.0.0-7f8c8d.svg)](https://estudiodigitalbocca.com.br)
 
 ### INSTRUÇÕES ###
 
@@ -37,6 +40,11 @@ npm run dev
 - Gere os arquivos de produção com o Gulp (AGUARDANDO IMPLEMENTAÇÃO).
 
 #### MUDANÇAS ####
+
+**mudanças v1.0.0**
+
+- Disponibilização no GitHub.
+- Adicionada licença MIT.
 
 **mudanças v0.11.0**
 
@@ -110,5 +118,4 @@ npm run dev
 
 ---
 
->Produzido nos Estúdios da **EDB/Sao Paulo** utilizando o melhor da programacao web.
 >(c)2017 - Estudio Digital Bocca - http://estudiodigitalbocca.com.br
