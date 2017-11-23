@@ -16,7 +16,6 @@ namespace EstudioDigitalBocca\Gerador;
 class CriadorDeDiretorio {
 
     private function ExcluiDir($Dir){
-    
         if ($dd = opendir($Dir)) {
             while (false !== ($Arq = readdir($dd))) {
                 if($Arq != "." && $Arq != ".."){
@@ -26,7 +25,6 @@ class CriadorDeDiretorio {
                     }elseif(is_file($Path)){
                         print("APAGANDO ARQUIVO: " . $Path . "\n");
                         unlink($Path);
-
                     }
                 }
             }
@@ -46,9 +44,7 @@ class CriadorDeDiretorio {
      */
     public function __construct($nome, $caminho = "./"){
         $diretorio = $caminho . $nome;
-        
         if(file_exists($diretorio)){
-
             $this->ExcluiDir($diretorio);
 
             /**
@@ -73,7 +69,6 @@ class CriadorDeDiretorio {
             // rmdir($diretorio);
             print("Apagando Pasta Antiga\n");
         }
-
         mkdir($diretorio);
     }
 }

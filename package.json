@@ -1,10 +1,10 @@
 {
   "name": "gerador-edb",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Gerador de Páginas HTML Estáticas em PHP",
   "main": "gerador.php",
   "config": {
-    "commitMessage": "Atualização de dependências"
+    "commitMessage": "Adicionado Label Code Climate"
   },
   "scripts": {
     "gerar": "php gerador.php",
