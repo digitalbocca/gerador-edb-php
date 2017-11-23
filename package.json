@@ -1,10 +1,10 @@
 {
   "name": "gerador-edb",
-  "version": "0.11.0",
+  "version": "1.1.0",
   "description": "Gerador de Páginas HTML Estáticas em PHP",
   "main": "gerador.php",
   "config": {
-    "commitMessage": "Atualização das dependências do NPM do projeto gerado"
+    "commitMessage": "Atualização de dependências"
   },
   "scripts": {
     "gerar": "php gerador.php",

@@ -1,6 +1,6 @@
 # Estúdio Digital Bocca
 ## Gerador EDB ##
-### v1.0.0 ###
+### v1.1.0 ###
 
 > Gerador de Páginas Estáticas em PHP
 
@@ -13,7 +13,7 @@
 [![php](https://img.shields.io/badge/escrito_em-PHP-9b59b6.svg)](https://estudiodigitalbocca.com.br)
 [![js](https://img.shields.io/badge/escrito_em-JS-f1c40f.svg)](https://estudiodigitalbocca.com.br)
 [![egh-php](https://img.shields.io/badge/Extreme_Go_Horse-PHP-9b59b6.svg)](https://estudiodigitalbocca.com.br)
-[![versao](https://img.shields.io/badge/versao-v1.0.0-7f8c8d.svg)](https://estudiodigitalbocca.com.br)
+[![versao](https://img.shields.io/badge/versao-v1.1.0-7f8c8d.svg)](https://estudiodigitalbocca.com.br)
 
 ### INSTRUÇÕES ###
 
@@ -40,6 +40,10 @@ npm run dev
 - Gere os arquivos de produção com o Gulp (AGUARDANDO IMPLEMENTAÇÃO).
 
 #### MUDANÇAS ####
+
+**mudanças v1.1.0**
+
+- Atualização de Dependências.
 
 **mudanças v1.0.0**
 

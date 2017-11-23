@@ -8,7 +8,7 @@
  * @author Gabriel Bertola Bocca <gabriel at estudiodigitalbocca.com.br>
  * @copyright (c) 2017, Estúdio Digital Bocca
  * @since v0.4.0 Gerador EDB
- * @version v1.2.0
+ * @version v1.3.0
  */
 
 $modelo = <<<MODELO
@@ -32,7 +32,7 @@ $modelo = <<<MODELO
     "gitpushorigin" : "git push origin master --tags"
   },
   "devDependencies": {
-    "@cedx/gulp-php-minify": "^7.0.1",
+    "@cedx/gulp-php-minify": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
