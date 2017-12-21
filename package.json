@@ -1,20 +1,20 @@
 {
   "name": "gerador-edb",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Gerador de Páginas HTML Estáticas em PHP",
   "main": "gerador.php",
   "config": {
-    "commitMessage": "Adicionado Label Code Climate"
+    "commitMessage": "Adicionado cross-var-no-babel@1.2.0"
   },
   "scripts": {
     "gerar": "php gerador.php",
-    "git": "npm run gitstatus && npm run gitadd && npm run gitcommit && npm run gittag && npm run gporigin && npm run gpbb",
-    "gitstatus": "git status",
-    "gitadd": "git add .",
-    "gitcommit": "git commit -m \"%npm_package_config_commitMessage%\"",
-    "gittag": "git tag v%npm_package_version%",
-    "gporigin" : "git push origin master --tags",
-    "gpbb" : "git push bitbucket master --tags"
+    "git": "npm run gst && npm run gad && npm run gco && npm run gta && npm run gpo && npm run gpb",
+    "gst": "git status",
+    "gad": "git add .",
+    "gco": "cross-var git commit -m \"$npm_package_config_commitMessage\"",
+    "gta": "cross-var git tag v$npm_package_version",
+    "gpo": "git push origin master --tags",
+    "gpb": "git push bitbucket master --tags"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   ],
   "author": "Gabriel Bertola Bocca - gabriel@estudiodigitalbocca.com.br",
   "license": "MIT",
-  "homepage": "https://github.com/digitalbocca/gerador-edb-php.git"
+  "homepage": "https://github.com/digitalbocca/gerador-edb-php.git",
+  "devDependencies": {
+    "cross-var-no-babel": "^1.2.0"
+  }
 }
