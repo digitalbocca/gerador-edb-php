@@ -2,7 +2,7 @@
 
 ## Gerador EDB
 
-### v1.5.0
+### v1.6.0
 
 > Gerador de Páginas Estáticas em PHP
 >
@@ -50,6 +50,10 @@ npm run dev
 - Gere os arquivos de produção com o Gulp (AGUARDANDO IMPLEMENTAÇÃO).
 
 #### MUDANÇAS
+
+##### mudanças v1.6.0
+
+- Enviado para o arquivo EDB.
 
 ##### mudanças v1.5.0
 
